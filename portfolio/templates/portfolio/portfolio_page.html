@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% load static wagtailimages_tags %}
+{% load wagtailcore_tags %}
+
+{% block extra_css %}
+
+<link rel="stylesheet" href="{% static 'css/my_project.css' %}">
+
+{% endblock %}
+
+{% block content %}
+<section class="container">
+    <div class="row">
+        <div class="col">
+            {% image page.background_image fill-1600x800 as bg_img %}
+            <div class="jumbotron d-flex justify-content-center"
+                style="background-image: url('{{ bg_img.url }}'); 
+                    background-repeat: no-repeat;
+                    height: 40vh;">
+                <h1 class="display-4 my-auto text-center">{{ page.headline_text }}</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2 class="ml-4 mb-3">Experience</h2>
+        </div>
+        <div class="col-sm-12 col-md-8 offset-md-2">
+            <div class="row">
+                {% for block in page.experience %}
+                    {% include_block block %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

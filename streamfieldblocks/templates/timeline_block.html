@@ -1,0 +1,21 @@
+{% load static wagtailimages_tags %}
+<div class="col-1 position-relative">
+    <div class="bar"></div>
+    <div class="date-container d-flex flex-column flex-md-row align-items-center ">
+        <div class="date mr-0 mr-md-3">{{ self.date.year }}</div>
+        <div class="dot "></div>
+    </div>
+</div>
+{% image page.background_image fill-1600x800 as bg_img %}
+<div class="col-11 py-4">
+
+    <div class="card shadow-sm">
+        <div class=""card-header><img src="bg_img" alt="">
+        </div>
+        <div class="card-body">
+            <h5>{{ self.title }}</h5>
+            <p>{{ self.text }}</p>
+        </div>
+    </div>
+
+</div>

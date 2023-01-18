@@ -1,0 +1,18 @@
+{% load wagtailimages_tags %}
+{% load wagtailcore_tags %}
+
+<h1> Card component</h1>
+
+<div class="col-md-4">
+    <span class="fa-stack fa-4x">
+        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+        <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
+    </span>
+    <h4 class="service-heading">{{ self.title }}</h4>
+    <p class="text-muted">
+       {{ self.body}}
+    </p>
+        <div>
+            <a href="{% pageurl self.plink %}" class="btn btn-primary">Learn More</a>
+        </div>
+</div>

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% load wagtailimages_tags wagtailcore_tags %}
+
+{% block content %}
+<section class="container">
+    <div class="row">
+        <div class="col">
+            <h1>{{ page.title }}</h1>
+            <p>{{ page.created }}</p>
+
+            <div class="intro">{{ page.intro }}</div>
+
+            {{ page.body|richtext }}
+
+            <p><a href="{{ page.get_parent.url }}">Return to blog</a></p>
+        </div>
+    </div>
+
+<div class="row">
+        <h5 class="card-title"> {{ page.intro }}  </h5>
+        {% for article in page.content %}
+       
+        <div class="col-sm-12 col-md-6 col-lg-4">
+           
+            <div class="card"  >
+                <div class="card-body">
+                    <h5 class="card-title">
+                        {{ article.intro}}
+                        {{ article.specific.article_title }}
+                    </h5>
+                    <h5 class="card-header"> {{ article.specific.content }} </h5>
+
+                    <p class="card-text"> {{ article }}
+                        
+                    </p>
+                    <a href="{# pageurl article #}" class="btn btn-primary">View article</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</section>
+{% endblock %}

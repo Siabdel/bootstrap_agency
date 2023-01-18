@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/my_project.css' %}">
+{% endblock %}
+<!-- Inside Blog Page Template -->
+ 
+{% block content %}
+
+<section class="container">
+     {% image page.image fill-1600x800 as bg_img %}
+    <div class="row my-5 jumbotron "  >
+        <div class="row" style="background-image: url('{{ bg_img.url }}')"  >
+            <h4 
+                class="col-1 p-md-3 mb-2 text-justify text-white">Mes Projets</h4>
+        </div>
+        <div class="row">
+            <h3>{{ page.title }} </h3>
+        </div>
+    </div>
+
+    <div class="row">
+         <h5 class="card-title"> {{ page.intro }}  </h5>
+        {% for project in page.content %}
+       
+        <div class="col-sm-12 col-md-6 col-lg-4">
+           
+            <div class="card"  >
+                <div class="card-body">
+                    <h5 class="card-title">
+                        {{ project.intro}}
+                        {{ project.specific.project_title }}
+                    </h5>
+                    <h5 class="card-header">
+                         
+                         {{ project }} </h5>
+
+                    <p class="card-text"> {{ project.specific.content }}</p>
+                    <a href="{# pageurl project #}" class="btn btn-primary">View Project</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+commit 68bbd3472aabe46ecee7dc4feb87a1e492c59c4b
+Author: siabdel58 <siabdel58@gmail.com>
+Date:   Mon May 24 20:19:24 2021 +0200
+
+    add Portfolio, Gallerie, Services
+
+commit 54b46faa54490ead7af246a24eb0b13675376b47
+Author: siabdel58 <siabdel58@gmail.com>
+Date:   Fri May 21 21:54:15 2021 +0200
+
+    create a Contact page + Services page
+
+commit 4673dde20fb531f0256685ca2bff2ba0eaf37a50
+Author: siabdel58 <siabdel58@gmail.com>
+Date:   Mon May 17 22:47:41 2021 +0200
+
+    init my wagtail CMS a base template clean blog
